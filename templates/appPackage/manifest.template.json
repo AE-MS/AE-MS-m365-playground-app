@@ -35,7 +35,16 @@
             "scopes": [
                 "personal"
             ]
-        }
+        },
+        {
+            "entityId": "index1",
+            "name": "A Second Tab",
+            "contentUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}{{{state.fx-resource-frontend-hosting.indexPath}}}/tab",
+            "websiteUrl": "{{{state.fx-resource-frontend-hosting.endpoint}}}{{{state.fx-resource-frontend-hosting.indexPath}}}/tab",
+            "scopes": [
+                "personal"
+            ]
+        }        
     ],
     "permissions": [
         "identity",
