@@ -1,0 +1,39 @@
+{
+    "solution": {
+        "provisionSucceeded": true,
+        "teamsAppTenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "subscriptionId": "e14ca9d0-b9a4-48dc-9ec1-3516c2eb1d29",
+        "subscriptionName": "Teo",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "needCreateResourceGroup": true,
+        "resourceGroupName": "ae-m_365_playground-dev-rg",
+        "location": "West US 2",
+        "resourceNameSuffix": "4c7430"
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "teamsAppId": "bf989c08-0cbd-49bb-b14b-68df0b90f567"
+    },
+    "fx-resource-frontend-hosting": {
+        "indexPath": "/index.html#",
+        "domain": "m365playgrcb3596tab.z5.web.core.windows.net",
+        "endpoint": "https://m365playgrcb3596tab.z5.web.core.windows.net",
+        "storageResourceId": "/subscriptions/e14ca9d0-b9a4-48dc-9ec1-3516c2eb1d29/resourceGroups/ae-m_365_playground-dev-rg/providers/Microsoft.Storage/storageAccounts/m365playgrcb3596tab"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "349722c9-3264-41b0-9d8a-0a0b2a76e3c2",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "6c48693e-40f9-42fc-8461-07d2b541ce94",
+        "oauth2PermissionScopeId": "67404cff-6934-4023-ad8e-c0c40d9b2fe8",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "applicationIdUris": "api://m365playgrcb3596tab.z5.web.core.windows.net/349722c9-3264-41b0-9d8a-0a0b2a76e3c2",
+        "frontendEndpoint": "https://m365playgrcb3596tab.z5.web.core.windows.net"
+    },
+    "fx-resource-identity": {
+        "identityName": "m365playgrcb3596",
+        "identityResourceId": "/subscriptions/e14ca9d0-b9a4-48dc-9ec1-3516c2eb1d29/resourceGroups/ae-m_365_playground-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/m365playgrcb3596",
+        "identityClientId": "ab27374f-a414-4476-ae76-04b80eb73f4c"
+    }
+}

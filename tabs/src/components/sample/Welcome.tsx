@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Image, Menu } from "@fluentui/react-northstar";
 import "./Welcome.css";
 import { EditCode } from "./EditCode";
-import { app, pages } from "@microsoft/teams-js";
+import { app, authentication, pages } from "@microsoft/teams-js";
 import { AzureFunctions } from "./AzureFunctions";
 import { Graph } from "./Graph";
 import { CurrentUser } from "./CurrentUser";
@@ -13,6 +13,16 @@ import { TeamsFxContext } from "../Context";
 
 function onShareDeepLinkbutton() {
   pages.shareDeepLink({subPageId: "subPageId", subPageLabel: "subPageLabel"});
+}
+
+async function onGetAuthToken() {
+  try {
+    const theToken = await authentication.getAuthToken();
+    console.log(`Got the token`);
+    console.log(theToken);
+  } catch (error) {
+    console.log(`Error getting token: ${error}`)
+  }
 }
 
 export function Welcome(props: { showFunction?: boolean; environment?: string }) {
@@ -64,6 +74,7 @@ export function Welcome(props: { showFunction?: boolean; environment?: string })
           <p className="center">Your app is running in {hubName}</p>
         )}
         <p className="center">Your app is running in your {friendlyEnvironmentName}</p>
+        <button onClick={onGetAuthToken}>Get auth token</button>
         <button onClick={onShareDeepLinkbutton}>Share a deep link</button>
         <Menu defaultActiveIndex={0} items={items} underlined secondary />
         <div className="sections">
