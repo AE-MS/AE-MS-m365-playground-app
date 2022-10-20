@@ -25,6 +25,13 @@ async function onGetAuthToken() {
   }
 }
 
+function onLinkToSecondTab() {
+  pages.navigateToApp({
+    appId: "aa9e7f24-7266-4c1c-9408-aaa9482d1664",
+    pageId: "index1",
+  });
+}
+
 export function Welcome(props: { showFunction?: boolean; environment?: string }) {
   const { showFunction, environment } = {
     showFunction: true,
@@ -60,11 +67,15 @@ export function Welcome(props: { showFunction?: boolean; environment?: string })
     }
   });
   const userName = (loading || error) ? "": data!.displayName;
-  const hubName = useData(async () => {
+  const context = useData(async () => {
     await app.initialize();
-    const context = await app.getContext();
-    return context.app.host.name;
+    const context = await app.getContext();    
+    return context;
   })?.data;
+
+  const hubName: string | undefined = context?.app.host.name;
+  const pageId: string | undefined = context?.page.id;
+
   return (
     <div className="welcome page">
       <div className="narrow page-padding">
@@ -74,8 +85,12 @@ export function Welcome(props: { showFunction?: boolean; environment?: string })
           <p className="center">Your app is running in {hubName}</p>
         )}
         <p className="center">Your app is running in your {friendlyEnvironmentName}</p>
+        {pageId && (
+          <p className="center">The page id is {pageId}</p>
+        )}
         <button onClick={onGetAuthToken}>Get auth token</button>
         <button onClick={onShareDeepLinkbutton}>Share a deep link</button>
+        <button onClick={onLinkToSecondTab}>Link to Second Tab</button>
         <Menu defaultActiveIndex={0} items={items} underlined secondary />
         <div className="sections">
           {selectedMenuItem === "local" && (
